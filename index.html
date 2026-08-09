@@ -4,420 +4,177 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EduAja - Platform Digital</title>
-
 <style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: #14213d;
-  background: #ffffff;
-}
-
-.topbar {
-  background: #0b3158;
-  color: white;
-  padding: 12px 40px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 15px;
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 40px;
-  background: white;
-}
-
-.logo-area {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.logo-area img {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-}
-
-.logo-text h2 {
-  margin: 0;
-  font-size: 25px;
-}
-
-.logo-text p {
-  margin: 5px 0 0;
-  color: #70809a;
-}
-
-.nav-menu {
-  display: flex;
-  gap: 28px;
-  align-items: center;
-}
-
-.nav-menu a {
-  text-decoration: none;
-  color: #14213d;
-  font-weight: bold;
-}
-
-.btn-admin {
-  background: #1261d6;
-  color: white !important;
-  padding: 16px 25px;
-  border-radius: 12px;
-}
-
-.hero {
-  min-height: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 70px 60px;
-  background: linear-gradient(120deg, #ffffff 45%, #eaffcf);
-}
-
-.hero-left {
-  width: 52%;
-}
-
-.badge {
-  display: inline-block;
-  background: #e8ffc5;
-  color: #4d7d00;
-  padding: 12px 20px;
-  border-radius: 30px;
-  font-weight: bold;
-  margin-bottom: 25px;
-}
-
-.hero h1 {
-  font-size: 68px;
-  line-height: 1.05;
-  margin: 0 0 25px;
-}
-
-.hero h1 span {
-  color: #70d000;
-}
-
-.hero p {
-  font-size: 21px;
-  line-height: 1.6;
-  color: #64748b;
-}
-
-.buttons {
-  margin-top: 30px;
-  display: flex;
-  gap: 15px;
-}
-
-.btn-primary,
-.btn-secondary {
-  display: inline-block;
-  padding: 17px 28px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 17px;
-}
-
-.btn-primary {
-  background: #1261d6;
-  color: white;
-}
-
-.btn-secondary {
-  background: #e9f1ff;
-  color: #1261d6;
-}
-
-.hero-right {
-  width: 43%;
-  background: white;
-  border-radius: 35px;
-  padding: 35px;
-  box-shadow: 0 15px 45px rgba(0,0,0,0.08);
-  text-align: center;
-}
-
-.hero-right img {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 20px;
-}
-
-.section {
-  padding: 70px 50px;
-  text-align: center;
-}
-
-.section h2 {
-  font-size: 38px;
-  margin-bottom: 15px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  max-width: 1100px;
-  margin: 40px auto;
-}
-
-.card {
-  padding: 30px;
-  border-radius: 18px;
-  background: #f7faff;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-}
-
-.card h3 {
-  color: #1261d6;
-}
-
-.footer {
-  background: #0b3158;
-  color: #ffffff;
-  padding: 70px 50px 25px;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 70px;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.footer h3 {
-  font-size: 26px;
-  margin: 0 0 25px;
-  color: #ffffff;
-}
-
-.footer p {
-  font-size: 18px;
-  line-height: 1.65;
-  margin: 0 0 20px;
-  color: #ffffff;
-}
-
-.footer-cv-logo {
-  width: 90px;
-  height: 90px;
-  object-fit: contain;
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 8px;
-  margin-bottom: 20px;
-}
-
-.footer-qris {
-  width: 180px;
-  height: 180px;
-  object-fit: contain;
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 8px;
-  display: block;
-  margin: 15px 0 20px;
-}
-
-.footer-bottom {
-  max-width: 1400px;
-  margin: 50px auto 0;
-  padding-top: 25px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.footer-bottom p {
-  margin: 0;
-  font-size: 16px;
-}
-
-@media (max-width: 800px) {
-  .footer {
-    padding: 50px 25px 20px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .footer-qris {
-    width: 160px;
-    height: 160px;
-  }
-}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;color:#14213d;background:#fff}
+.topbar{background:#0b3158;color:#fff;padding:11px 40px;display:flex;justify-content:space-between;font-size:14px}
+.navbar{display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:#fff;border-bottom:1px solid #e8edf3;position:sticky;top:0;z-index:50}
+.logo-area{display:flex;align-items:center;gap:13px;text-decoration:none;color:#14213d}
+.logo-area img{width:62px;height:62px;object-fit:contain}.logo-text h2{margin:0;font-size:24px}.logo-text p{margin:4px 0 0;color:#70809a}
+.nav-menu{display:flex;gap:18px;align-items:center;flex-wrap:wrap}.nav-menu a{text-decoration:none;color:#14213d;font-weight:bold;font-size:14px}
+.btn-admin{background:#1261d6;color:#fff!important;padding:12px 18px;border-radius:10px}
+.language-switcher{display:flex;gap:3px;background:#edf3fb;border:1px solid #dce6f2;padding:3px;border-radius:9px}
+.language-switcher button{border:0;background:transparent;padding:7px 9px;border-radius:6px;font-weight:800;cursor:pointer;color:#52657d}
+.language-switcher button.active{background:#1261d6;color:#fff}
+.hero{padding:65px 60px;background:linear-gradient(120deg,#fff 42%,#eaffcf);display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center;min-height:590px}
+.hero-left{max-width:700px}.badge{display:inline-block;background:#e8ffc5;color:#4d7d00;padding:11px 18px;border-radius:30px;font-weight:bold;margin-bottom:22px}
+.hero h1{font-size:62px;line-height:1.05;margin:0 0 24px}.hero h1 span{color:#70d000}.hero p{font-size:19px;line-height:1.65;color:#64748b}
+.buttons{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}.btn-primary,.btn-secondary{display:inline-block;padding:15px 22px;border-radius:11px;text-decoration:none;font-weight:bold}
+.btn-primary{background:#1261d6;color:#fff}.btn-secondary{background:#e9f1ff;color:#1261d6}
+.animated-banner{height:410px;border-radius:28px;overflow:hidden;position:relative;box-shadow:0 16px 45px rgba(0,0,0,.12);background:#0b3158}
+.banner-track{height:100%;display:flex;width:300%;animation:bannerMove 15s infinite}
+.banner-slide{width:33.333%;height:100%;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:30px;overflow:hidden}
+.banner-slide:nth-child(1){background:linear-gradient(135deg,#0b3158,#1261d6)}
+.banner-slide:nth-child(2){background:linear-gradient(135deg,#eaffcf,#fff)}
+.banner-slide:nth-child(3){background:linear-gradient(135deg,#1261d6,#70d000)}
+.banner-slide:before,.banner-slide:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.12)}
+.banner-slide:before{width:260px;height:260px;right:-80px;top:-80px}.banner-slide:after{width:160px;height:160px;left:-55px;bottom:-55px}
+.banner-content{position:relative;z-index:2}.banner-content img{width:150px;height:150px;object-fit:contain;background:#fff;padding:12px;border-radius:20px;box-shadow:0 14px 30px rgba(0,0,0,.16)}
+.banner-content h2{font-size:30px;margin:18px 0 7px;color:#fff}.banner-content p{margin:0;color:rgba(255,255,255,.9);font-weight:bold}
+.banner-slide.light .banner-content h2{color:#14213d}.banner-slide.light .banner-content p{color:#64748b}
+@keyframes bannerMove{0%,28%{transform:translateX(0)}33%,61%{transform:translateX(-33.333%)}66%,94%{transform:translateX(-66.666%)}100%{transform:translateX(0)}}
+.banner-label{position:absolute;bottom:15px;left:0;right:0;text-align:center;color:rgba(255,255,255,.8);font-size:12px;z-index:3}
+.section{padding:70px 50px;text-align:center}.section h2{font-size:38px;margin:0 0 12px}.section>p{color:#64748b}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;max-width:1100px;margin:40px auto}.card{padding:30px;border-radius:18px;background:#f7faff;box-shadow:0 8px 25px rgba(0,0,0,.06);text-align:left}
+.card h3{color:#1261d6}.card p{color:#64748b;line-height:1.6}
+.footer{background:#0b3158;color:#fff;padding:65px 50px 25px}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:70px;max-width:1400px;margin:auto}
+.footer h3{font-size:26px;margin:0 0 22px;color:#fff}.footer p{font-size:18px;line-height:1.65;margin:0 0 18px;color:#fff}
+.footer-cv-logo{width:95px;height:95px;object-fit:contain;background:#fff;border-radius:12px;padding:8px;margin-bottom:18px}
+.footer-qris{width:190px;height:190px;object-fit:contain;background:#fff;border-radius:12px;padding:8px;display:block;margin:15px 0 20px}
+.footer-bottom{max-width:1400px;margin:45px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.2)}
+@media(max-width:950px){.navbar{padding:14px 20px}.nav-menu a:not(.btn-admin){display:none}.hero{grid-template-columns:1fr;padding:50px 25px}.hero h1{font-size:46px}.cards{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}.topbar{padding:10px 20px}}
+@media(max-width:650px){.topbar{font-size:11px;gap:10px}.logo-area img{width:48px;height:48px}.logo-text h2{font-size:20px}.logo-text p{font-size:12px}.navbar{padding:10px 14px}.hero{padding:40px 18px}.hero h1{font-size:38px}.hero p{font-size:17px}.animated-banner{height:330px}.banner-content img{width:120px;height:120px}.banner-content h2{font-size:22px}.cards,.footer-grid{grid-template-columns:1fr}.section{padding:50px 20px}.footer{padding:50px 25px 20px}}
 </style>
 </head>
-
 <body>
-
 <div class="topbar">
-  <div>CV. 8 Media Nusantara - EduAja</div>
-  <div>WhatsApp only: 0878-4945-4798</div>
+  <div data-id="CV. 8 Media Nusantara - EduAja" data-en="CV. 8 Media Nusantara - EduAja">CV. 8 Media Nusantara - EduAja</div>
+  <div data-id="WhatsApp: 0878-4945-4798" data-en="WhatsApp: 0878-4945-4798">WhatsApp: 0878-4945-4798</div>
 </div>
 
 <nav class="navbar">
-
-  <div class="logo-area">
-    <img src="eduaja-logo.jpeg" alt="Logo EduAja">
-
-    <div class="logo-text">
-      <h2>EduAja</h2>
-      <p>Platform Digital</p>
+  <a class="logo-area" href="index.html">
+    <img src="eduaja-logo.jpeg" alt="EduAja">
+    <div class="logo-text"><h2>EduAja</h2><p data-id="Platform Digital" data-en="Digital Platform">Platform Digital</p></div>
+  </a>
+  <div class="nav-menu">
+    <a href="#program" data-id="Program" data-en="Programs">Program</a>
+    <a href="#mapel" data-id="Mata Pelajaran" data-en="Subjects">Mata Pelajaran</a>
+    <a href="schedule.html" data-id="Jadwal" data-en="Schedule">Jadwal</a>
+    <a href="#guru" data-id="Lowongan Guru" data-en="Teacher Jobs">Lowongan Guru</a>
+    <a href="register.html" data-id="Daftar Siswa" data-en="Student Registration">Daftar Siswa</a>
+    <a href="classroom.html" data-id="Ruang Belajar" data-en="Learning Room">Ruang Belajar</a>
+    <a href="admin.html" class="btn-admin" data-id="Admin" data-en="Admin">Admin</a>
+    <div class="language-switcher">
+      <button id="langID" class="active" onclick="setLanguage('id')">ID</button>
+      <button id="langEN" onclick="setLanguage('en')">EN</button>
     </div>
   </div>
-
-  <div class="nav-menu">
-    <a href="#program">Program</a>
-    <a href="#mapel">Mata Pelajaran</a>
-    <a href="schedule.html">Jadwal</a>
-    <a href="#guru">Lowongan Guru</a>
-    <a href="register.html">Daftar Siswa</a>
-    <a href="classroom.html">Ruang Belajar</a>
-    <a href="admin.html" class="btn-admin">Admin</a>
-  </div>
-
 </nav>
 
 <section class="hero">
-
   <div class="hero-left">
-
-    <div class="badge">
-      🌱 Belajar digital untuk semua
-    </div>
-
+    <div class="badge" data-id="🌱 Belajar digital untuk semua" data-en="🌱 Digital learning for everyone">🌱 Belajar digital untuk semua</div>
     <h1>
-      Belajar <span>lebih mudah</span>,<br>
-      masa depan lebih siap.
+      <span data-id="Belajar lebih mudah" data-en="Learn more easily">Belajar lebih mudah</span>,<br>
+      <span data-id="masa depan lebih siap" data-en="be ready for the future">masa depan lebih siap</span>.
     </h1>
-
-    <p>
-      EduAja menghadirkan program bahasa dan pembelajaran nasional
-      SD, SMP, SMA, dan SMK dalam ruang belajar online yang terstruktur.
+    <p data-id="EduAja menghadirkan program bahasa dan pembelajaran nasional SD, SMP, SMA, dan SMK dalam ruang belajar online yang terstruktur." data-en="EduAja provides language programs and national curriculum learning for elementary, junior high, senior high, and vocational students in a structured online learning environment.">
+      EduAja menghadirkan program bahasa dan pembelajaran nasional SD, SMP, SMA, dan SMK dalam ruang belajar online yang terstruktur.
     </p>
-
     <div class="buttons">
-      <a href="register.html" class="btn-primary">
-        Daftar Siswa
-      </a>
-
-      <a href="#mapel" class="btn-secondary">
-        Jelajahi Mata Pelajaran
-      </a>
+      <a href="register.html" class="btn-primary" data-id="Daftar Siswa" data-en="Register as Student">Daftar Siswa</a>
+      <a href="#mapel" class="btn-secondary" data-id="Jelajahi Mata Pelajaran" data-en="Explore Subjects">Jelajahi Mata Pelajaran</a>
     </div>
-
   </div>
 
-  <div class="hero-right">
-    <img src="eduaja-logo.jpeg" alt="EduAja Platform Digital">
+  <div class="animated-banner">
+    <div class="banner-track">
+      <div class="banner-slide">
+        <div class="banner-content">
+          <img src="eduaja-logo.jpeg" alt="EduAja">
+          <h2 data-id="Belajar Lebih Mudah" data-en="Learning Made Easier">Belajar Lebih Mudah</h2>
+          <p data-id="ala bisa karena biasa" data-en="Practice makes progress">ala bisa karena biasa</p>
+        </div>
+      </div>
+      <div class="banner-slide light">
+        <div class="banner-content">
+          <img src="eduaja-logo.jpeg" alt="EduAja">
+          <h2 data-id="Program Bahasa & Nasional" data-en="Language & National Programs">Program Bahasa & Nasional</h2>
+          <p data-id="SD · SMP · SMA · SMK" data-en="Elementary · Junior High · Senior High · Vocational">SD · SMP · SMA · SMK</p>
+        </div>
+      </div>
+      <div class="banner-slide">
+        <div class="banner-content">
+          <img src="cv8-logo.jpeg" alt="CV. 8 Media Nusantara">
+          <h2 data-id="Bersama EduAja" data-en="Together with EduAja">Bersama EduAja</h2>
+          <p data-id="Belajar hari ini, siap untuk masa depan" data-en="Learn today, be ready for tomorrow">Belajar hari ini, siap untuk masa depan</p>
+        </div>
+      </div>
+    </div>
+    <div class="banner-label" data-id="Banner EduAja • berganti otomatis" data-en="EduAja Banner • changes automatically">Banner EduAja • berganti otomatis</div>
   </div>
-
 </section>
 
 <section class="section" id="program">
-
-  <h2>Program EduAja</h2>
-
-  <p>
-    Pilihan pembelajaran untuk membantu siswa berkembang.
-  </p>
-
+  <h2 data-id="Program EduAja" data-en="EduAja Programs">Program EduAja</h2>
+  <p data-id="Pilihan pembelajaran untuk membantu siswa berkembang." data-en="Learning options designed to help students grow.">Pilihan pembelajaran untuk membantu siswa berkembang.</p>
   <div class="cards">
-
     <div class="card">
-      <h3>📚 Program Nasional</h3>
-      <p>
-        Pembelajaran untuk siswa SD, SMP, SMA dan SMK.
-      </p>
+      <h3 data-id="📚 Program Nasional" data-en="📚 National Programs">📚 Program Nasional</h3>
+      <p data-id="Pembelajaran untuk siswa SD, SMP, SMA dan SMK." data-en="Learning programs for elementary, junior high, senior high and vocational students.">Pembelajaran untuk siswa SD, SMP, SMA dan SMK.</p>
     </div>
-
     <div class="card" id="mapel">
-      <h3>🌏 Bahasa</h3>
-      <p>
-        Belajar Bahasa Inggris, Jepang, Korea dan bahasa lainnya.
-      </p>
+      <h3 data-id="🌏 Program Bahasa" data-en="🌏 Language Programs">🌏 Program Bahasa</h3>
+      <p data-id="Belajar Bahasa Inggris, Jepang, Korea dan bahasa lainnya." data-en="Learn English, Japanese, Korean and other languages.">Belajar Bahasa Inggris, Jepang, Korea dan bahasa lainnya.</p>
     </div>
-
     <div class="card" id="guru">
-      <h3>👨‍🏫 Guru & Tutor</h3>
-      <p>
-        Ruang untuk guru dan tutor bergabung bersama EduAja.
-      </p>
+      <h3 data-id="👨‍🏫 Guru & Tutor" data-en="👨‍🏫 Teachers & Tutors">👨‍🏫 Guru & Tutor</h3>
+      <p data-id="Ruang untuk guru dan tutor bergabung bersama EduAja." data-en="A place for teachers and tutors to join EduAja.">Ruang untuk guru dan tutor bergabung bersama EduAja.</p>
     </div>
-
   </div>
-
 </section>
 
 <footer class="footer">
   <div class="footer-grid">
-
-    <!-- KOLOM 1: CV. 8 MEDIA NUSANTARA -->
-    <div class="footer-brand">
-      <img
-        src="cv8-logo.jpeg"
-        alt="Logo CV. 8 Media Nusantara"
-        class="footer-cv-logo"
-      >
-
+    <div>
+      <img src="cv8-logo.jpeg" alt="Logo CV. 8 Media Nusantara" class="footer-cv-logo">
       <h3>CV. 8 Media Nusantara</h3>
-
-      <p>
-        Ruko FastMart Jl. Ciater Wareng RT.01/013 No. 26 Ds. Rw. Kalong,
-        Kec. Gn Sindur, kab. Bogor, Jawa Barat.
+      <p data-id="Ruko FastMart Jl. Ciater Wareng RT.01/013 No. 26 Ds. Rw. Kalong, Kec. Gn Sindur, Kab. Bogor, Jawa Barat." data-en="Ruko FastMart Jl. Ciater Wareng RT.01/013 No. 26 Ds. Rw. Kalong, Gn Sindur, Bogor, West Java, Indonesia.">
+        Ruko FastMart Jl. Ciater Wareng RT.01/013 No. 26 Ds. Rw. Kalong, Kec. Gn Sindur, Kab. Bogor, Jawa Barat.
       </p>
     </div>
-
-    <!-- KOLOM 2: EDUAJA -->
-    <div class="footer-info">
+    <div>
       <h3>EduAja</h3>
-
-      <p>
-        Program bahasa, mata pelajaran nasional,
-        ruang belajar online, jadwal dan absensi digital.
+      <p data-id="Program bahasa, mata pelajaran nasional, ruang belajar online, jadwal dan absensi digital." data-en="Language programs, national subjects, online learning rooms, schedules and digital attendance.">
+        Program bahasa, mata pelajaran nasional, ruang belajar online, jadwal dan absensi digital.
       </p>
     </div>
-
-    <!-- KOLOM 3: PEMBAYARAN -->
-    <div class="footer-payment">
-      <h3>Pembayaran</h3>
-
-      <p>
-        BCA <strong>2186552551</strong><br>
-        a.n. CV. 8 Media Nusantara
+    <div>
+      <h3 data-id="Pembayaran" data-en="Payment">Pembayaran</h3>
+      <p>BCA <strong>2186552551</strong><br>
+        <span data-id="a.n. CV. 8 Media Nusantara" data-en="Account name: CV. 8 Media Nusantara">a.n. CV. 8 Media Nusantara</span>
       </p>
-
-      <img
-        src="qris-cv8.jpeg"
-        alt="QRIS Pembayaran CV. 8 Media Nusantara"
-        class="footer-qris"
-      >
-
-      <p>
-        WA: 0878-4945-4798
-      </p>
+      <img src="qris-cv8.jpeg" alt="QRIS Pembayaran CV. 8 Media Nusantara" class="footer-qris">
+      <p>WA: 0878-4945-4798</p>
     </div>
-
   </div>
-
   <div class="footer-bottom">
-    <p>© 2026 EduAja · CV. 8 Media Nusantara</p>
+    <span data-id="© 2026 EduAja · CV. 8 Media Nusantara" data-en="© 2026 EduAja · CV. 8 Media Nusantara">© 2026 EduAja · CV. 8 Media Nusantara</span>
   </div>
 </footer>
 
+<script>
+function setLanguage(lang){
+  document.documentElement.lang=lang;
+  localStorage.setItem('eduaja_lang',lang);
+  document.querySelectorAll('[data-id]').forEach(function(el){
+    el.textContent=lang==='en' ? el.getAttribute('data-en') : el.getAttribute('data-id');
+  });
+  document.getElementById('langID').classList.toggle('active',lang==='id');
+  document.getElementById('langEN').classList.toggle('active',lang==='en');
+}
+setLanguage(localStorage.getItem('eduaja_lang')||'id');
+</script>
 </body>
 </html>
