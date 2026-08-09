@@ -1,0 +1,35 @@
+EDUAJA PRODUCTION V1 - STARTER SOURCE
+======================================
+
+Paket ini adalah source starter EduAja yang sebelumnya sudah kita susun.
+
+FITUR DEMO:
+- Homepage EduAja
+- Program Bahasa + mata pelajaran nasional
+- Form pendaftaran siswa
+- Form lowongan guru
+- Jadwal dan ruang belajar
+- Admin Studio dasar
+- Logo EduAja
+- Logo CV. 8 Media Nusantara
+- QR pembayaran
+
+CATATAN PENTING:
+Paket ini masih merupakan FRONTEND/PROTOTYPE. Data demo tersimpan di browser (localStorage).
+Untuk produksi sebenarnya, formulir siswa/guru, upload dokumen, akun siswa/guru, absensi,
+dan pembayaran perlu backend/database, storage dokumen, autentikasi server-side,
+hashing password, dan kontrol akses.
+
+CARA UPLOAD KE GITHUB:
+1. Ekstrak ZIP ini di komputer.
+2. Buka repository GitHub eduaja-platform.
+3. Klik "Add file" -> "Upload files".
+4. Buka folder hasil ekstrak.
+5. Pilih SEMUA ISI folder tersebut (bukan folder luarnya).
+6. Tarik/drop ke halaman upload GitHub.
+7. Klik "Commit changes".
+8. Setelah itu sambungkan repository GitHub ke project Vercel eduaja-platform.
+
+JANGAN upload folder node_modules jika nanti ada.
+
+JANGAN masukkan password admin production ke source code.
