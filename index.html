@@ -75,17 +75,9 @@ body {
   border-radius: 12px;
 }
 
-.hero {
-  min-height: 600px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 70px 60px;
-  background: linear-gradient(120deg, #ffffff 45%, #eaffcf);
-}
-
-.hero-left {
-  width: 52%;
+<section class="hero">
+   ...
+</section>
 }
 
 .badge {
@@ -260,6 +252,131 @@ body {
   }
 }
 </style>
+  .hero-banner {
+    width: 100%;
+    padding: 20px 30px 40px;
+    background: #f5f8fc;
+}
+
+.banner-slider {
+    position: relative;
+    width: 100%;
+    max-width: 1450px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 24px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.10);
+}
+
+.banner-slide {
+    display: none;
+    width: 100%;
+}
+
+.banner-slide.active {
+    display: block;
+    animation: bannerFade 0.8s ease;
+}
+
+.banner-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    object-fit: cover;
+}
+
+@keyframes bannerFade {
+    from {
+        opacity: 0;
+        transform: scale(1.03);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.banner-prev,
+.banner-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.45);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.banner-prev {
+    left: 20px;
+}
+
+.banner-next {
+    right: 20px;
+}
+
+.banner-prev:hover,
+.banner-next:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+.banner-dots {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 5;
+}
+
+.banner-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.6);
+    cursor: pointer;
+}
+
+.banner-dot.active {
+    width: 28px;
+    border-radius: 10px;
+    background: #0d6efd;
+}
+
+@media (max-width: 768px) {
+
+    .hero-banner {
+        padding: 10px 12px 25px;
+    }
+
+    .banner-slider {
+        border-radius: 15px;
+    }
+
+    .banner-prev,
+    .banner-next {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+
+    .banner-prev {
+        left: 10px;
+    }
+
+    .banner-next {
+        right: 10px;
+    }
+
+}
 </head>
 
 <body>
@@ -420,4 +537,41 @@ body {
 </footer>
 
 </body>
+  <script>
+
+let currentBanner = 0;
+const banners = document.querySelectorAll(".banner-slide");
+const dots = document.querySelectorAll(".banner-dot");
+
+function showBanner(index) {
+
+    if (index >= banners.length) {
+        currentBanner = 0;
+    } else if (index < 0) {
+        currentBanner = banners.length - 1;
+    } else {
+        currentBanner = index;
+    }
+
+    banners.forEach(function(banner) {
+        banner.classList.remove("active");
+    });
+
+    dots.forEach(function(dot) {
+        dot.classList.remove("active");
+    });
+
+    banners[currentBanner].classList.add("active");
+    dots[currentBanner].classList.add("active");
+}
+
+function changeBanner(direction) {
+    showBanner(currentBanner + direction);
+}
+
+setInterval(function() {
+    showBanner(currentBanner + 1);
+}, 4000);
+
+</script>
 </html>
