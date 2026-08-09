@@ -186,38 +186,77 @@ body {
 
 .footer {
   background: #0b3158;
-  color: white;
-  padding: 35px;
-  text-align: center;
+  color: #ffffff;
+  padding: 70px 50px 25px;
 }
 
-@media (max-width: 900px) {
-  .navbar {
-    flex-direction: column;
-    gap: 20px;
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 70px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer h3 {
+  font-size: 26px;
+  margin: 0 0 25px;
+  color: #ffffff;
+}
+
+.footer p {
+  font-size: 18px;
+  line-height: 1.65;
+  margin: 0 0 20px;
+  color: #ffffff;
+}
+
+.footer-cv-logo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 8px;
+  margin-bottom: 20px;
+}
+
+.footer-qris {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 8px;
+  display: block;
+  margin: 15px 0 20px;
+}
+
+.footer-bottom {
+  max-width: 1400px;
+  margin: 50px auto 0;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 16px;
+}
+
+@media (max-width: 800px) {
+  .footer {
+    padding: 50px 25px 20px;
   }
 
-  .nav-menu {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .hero {
-    flex-direction: column;
-    padding: 50px 25px;
-  }
-
-  .hero-left,
-  .hero-right {
-    width: 100%;
-  }
-
-  .hero h1 {
-    font-size: 45px;
-  }
-
-  .cards {
+  .footer-grid {
     grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .footer-qris {
+    width: 160px;
+    height: 160px;
   }
 }
 </style>
@@ -325,8 +364,59 @@ body {
 </section>
 
 <footer class="footer">
-  <p><strong>EduAja - Platform Digital</strong></p>
-  <p>Belajar lebih mudah, masa depan lebih siap.</p>
+  <div class="footer-grid">
+
+    <!-- KOLOM 1: CV. 8 MEDIA NUSANTARA -->
+    <div class="footer-brand">
+      <img
+        src="cv8-logo.jpeg"
+        alt="Logo CV. 8 Media Nusantara"
+        class="footer-cv-logo"
+      >
+
+      <h3>CV. 8 Media Nusantara</h3>
+
+      <p>
+        Ruko HLC (Ada Learaning Center) Jl. Ciater Wareng RT.01/013 No. 26 Ds. Rw. Kalong,
+        Kec. Gn Sindur, kab. Bogor, Jawa Barat.
+      </p>
+    </div>
+
+    <!-- KOLOM 2: EDUAJA -->
+    <div class="footer-info">
+      <h3>EduAja</h3>
+
+      <p>
+        Program bahasa, mata pelajaran nasional,
+        ruang belajar online, jadwal dan absensi digital.
+      </p>
+    </div>
+
+    <!-- KOLOM 3: PEMBAYARAN -->
+    <div class="footer-payment">
+      <h3>Pembayaran</h3>
+
+      <p>
+        BCA <strong>2186552551</strong><br>
+        a.n. CV. 8 Media Nusantara
+      </p>
+
+      <img
+        src="qris-cv8.jpeg"
+        alt="QRIS Pembayaran CV. 8 Media Nusantara"
+        class="footer-qris"
+      >
+
+      <p>
+        WA: 0878-4945-4798
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 EduAja · CV. 8 Media Nusantara</p>
+  </div>
 </footer>
 
 </body>
