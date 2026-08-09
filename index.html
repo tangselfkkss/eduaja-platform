@@ -1,1 +1,333 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EduAja · Platform Digital</title><link rel="stylesheet" href="styles.css"></head><body><div data-nav></div><main><section class="hero"><div class="container hero-grid"><div><span class="eyebrow">🌱 Belajar digital untuk semua</span><h1>Belajar <span>lebih mudah</span>, masa depan lebih siap.</h1><p>EduAja menghadirkan program bahasa dan pembelajaran nasional SD, SMP, SMA, dan SMK dalam ruang belajar online yang terstruktur.</p><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="register.html">Daftar Siswa</a><a class="btn secondary" href="subjects.html?level=SD">Jelajahi Mata Pelajaran</a></div><p class="small muted">English · Bahasa Indonesia · Japanese · Korean · Mata Pelajaran Nasional</p></div><div class="hero-card"><img src="eduaja-logo.jpeg" alt="Logo EduAja"><div class="logo-row" style="margin-top:18px"><img src="assets/cv8-logo.jpeg"><div><b>CV. 8 Media Nusantara</b><br><span class="muted">Pengelola EduAja</span></div></div></div></div></section><section class="section" id="program"><div class="container"><div class="section-head"><div><h2>Program pembelajaran</h2><p class="muted">Pilih jalur belajar sesuai kebutuhan.</p></div></div><div class="grid grid-3" id="programCards"></div></div></section><section class="section alt" id="mapel"><div class="container"><div class="section-head"><div><h2>Mata pelajaran nasional</h2><p class="muted">Kurikulum terorganisasi berdasarkan jenjang.</p></div></div><div class="grid grid-4" id="mapelCards"></div></div></section><section class="section"><div class="container"><div class="pay"><div><span class="eyebrow">Pembayaran pendaftaran</span><h2>Transfer BCA atau scan QR</h2><p>Silakan transfer ke rekening BCA <b>2186552551</b> a.n. <b>CV. 8 Media Nusantara</b>. Bukti pembayaran diunggah pada formulir pendaftaran.</p><a class="btn" href="register.html">Lanjut Pendaftaran</a></div><img class="qr" src="assets/payment-qr.jpeg" alt="QR pembayaran"></div></div></section><section class="section alt" id="jadwal"><div class="container"><div class="section-head"><div><h2>Contoh jadwal belajar</h2><p class="muted">Senin–Jumat, dua sesi pagi dan siang. Setiap pembelajaran berlangsung 2 jam.</p></div><a class="btn secondary" href="schedule.html">Jadwal lengkap</a></div><div class="tablewrap"><table><thead><tr><th>Hari</th><th>Sesi</th><th>Jam</th><th>Jenjang</th><th>Mapel</th><th>Guru</th></tr></thead><tbody id="scheduleBody"></tbody></table></div></div></section><section class="section"><div class="container"><div class="card" style="background:linear-gradient(135deg,#082b52,#0c4f88);color:white"><div class="section-head"><div><h2>Ingin menjadi guru EduAja?</h2><p style="color:#d7e8f8">Buka peluang mengajar untuk SD, SMP, SMA, SMK, program Bahasa dan program lain yang tersedia.</p></div><a class="btn green" href="teachers.html">Lihat Lowongan Guru</a></div></div></div></section></main><div data-footer></div><script src="app.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduAja - Platform Digital</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #14213d;
+  background: #ffffff;
+}
+
+.topbar {
+  background: #0b3158;
+  color: white;
+  padding: 12px 40px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: white;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-area img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.logo-text h2 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.logo-text p {
+  margin: 5px 0 0;
+  color: #70809a;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #14213d;
+  font-weight: bold;
+}
+
+.btn-admin {
+  background: #1261d6;
+  color: white !important;
+  padding: 16px 25px;
+  border-radius: 12px;
+}
+
+.hero {
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 70px 60px;
+  background: linear-gradient(120deg, #ffffff 45%, #eaffcf);
+}
+
+.hero-left {
+  width: 52%;
+}
+
+.badge {
+  display: inline-block;
+  background: #e8ffc5;
+  color: #4d7d00;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-size: 68px;
+  line-height: 1.05;
+  margin: 0 0 25px;
+}
+
+.hero h1 span {
+  color: #70d000;
+}
+
+.hero p {
+  font-size: 21px;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 17px 28px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.btn-primary {
+  background: #1261d6;
+  color: white;
+}
+
+.btn-secondary {
+  background: #e9f1ff;
+  color: #1261d6;
+}
+
+.hero-right {
+  width: 43%;
+  background: white;
+  border-radius: 35px;
+  padding: 35px;
+  box-shadow: 0 15px 45px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.hero-right img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+}
+
+.section {
+  padding: 70px 50px;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1100px;
+  margin: 40px auto;
+}
+
+.card {
+  padding: 30px;
+  border-radius: 18px;
+  background: #f7faff;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.card h3 {
+  color: #1261d6;
+}
+
+.footer {
+  background: #0b3158;
+  color: white;
+  padding: 35px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 50px 25px;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 45px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <div>CV. 8 Media Nusantara - EduAja</div>
+  <div>WhatsApp only: 0878-4945-4798</div>
+</div>
+
+<nav class="navbar">
+
+  <div class="logo-area">
+    <img src="eduaja-logo.jpeg" alt="Logo EduAja">
+
+    <div class="logo-text">
+      <h2>EduAja</h2>
+      <p>Platform Digital</p>
+    </div>
+  </div>
+
+  <div class="nav-menu">
+    <a href="#program">Program</a>
+    <a href="#mapel">Mata Pelajaran</a>
+    <a href="schedule.html">Jadwal</a>
+    <a href="#guru">Lowongan Guru</a>
+    <a href="register.html">Daftar Siswa</a>
+    <a href="classroom.html">Ruang Belajar</a>
+    <a href="admin.html" class="btn-admin">Admin</a>
+  </div>
+
+</nav>
+
+<section class="hero">
+
+  <div class="hero-left">
+
+    <div class="badge">
+      🌱 Belajar digital untuk semua
+    </div>
+
+    <h1>
+      Belajar <span>lebih mudah</span>,<br>
+      masa depan lebih siap.
+    </h1>
+
+    <p>
+      EduAja menghadirkan program bahasa dan pembelajaran nasional
+      SD, SMP, SMA, dan SMK dalam ruang belajar online yang terstruktur.
+    </p>
+
+    <div class="buttons">
+      <a href="register.html" class="btn-primary">
+        Daftar Siswa
+      </a>
+
+      <a href="#mapel" class="btn-secondary">
+        Jelajahi Mata Pelajaran
+      </a>
+    </div>
+
+  </div>
+
+  <div class="hero-right">
+    <img src="eduaja-logo.jpeg" alt="EduAja Platform Digital">
+  </div>
+
+</section>
+
+<section class="section" id="program">
+
+  <h2>Program EduAja</h2>
+
+  <p>
+    Pilihan pembelajaran untuk membantu siswa berkembang.
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>📚 Program Nasional</h3>
+      <p>
+        Pembelajaran untuk siswa SD, SMP, SMA dan SMK.
+      </p>
+    </div>
+
+    <div class="card" id="mapel">
+      <h3>🌏 Bahasa</h3>
+      <p>
+        Belajar Bahasa Inggris, Jepang, Korea dan bahasa lainnya.
+      </p>
+    </div>
+
+    <div class="card" id="guru">
+      <h3>👨‍🏫 Guru & Tutor</h3>
+      <p>
+        Ruang untuk guru dan tutor bergabung bersama EduAja.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<footer class="footer">
+  <p><strong>EduAja - Platform Digital</strong></p>
+  <p>Belajar lebih mudah, masa depan lebih siap.</p>
+</footer>
+
+</body>
+</html>
